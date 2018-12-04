@@ -44,7 +44,6 @@ app.get("/", (req, res) => {
 });
 
 app.get("/maintanence", (req, res) => {
-  // res.send('<h1>About MY</h1>');
   res.render("maintanence.hbs", {
     pageTitle: "Maintanence Page",
     underMaintanence: "Site is under Maintanence"
@@ -52,14 +51,18 @@ app.get("/maintanence", (req, res) => {
 });
 
 app.get("/marina", (req, res) => {
-  // res.send('<h1>About MY</h1>');
   res.render("marina.hbs", {
     pageTitle: "Marina's Page"
   });
 });
 
+app.get("/portfolio", (req, res) => {
+  res.render("portfolio.hbs", {
+    pageTitle: "My Portfolio"
+  });
+});
+
 app.get("/about", (req, res) => {
-  // res.send('<h1>About MY</h1>');
   res.render("about.hbs", {
     pageTitle: "About Page"
   });
