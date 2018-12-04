@@ -3,11 +3,10 @@ const express = require("express");
 const hbs = require("hbs");
 const fs = require("fs");
 
-const port = process.env.PORT || 3000;
+const port = process.env.port || 3000;
 let app = express();
 hbs.registerPartials(__dirname + "/Views/partials");
 app.set("view engine", "hbs");
-
 
 app.use((req, res, next) => {
   let now = new Date().toString();
@@ -27,7 +26,7 @@ app.use((req, res, next) => {
 //   });
 
 app.use(express.static(__dirname + "/public"));
-  
+
 hbs.registerHelper("getCurrentYear", () => {
   return new Date().getFullYear();
 });
@@ -44,12 +43,12 @@ app.get("/", (req, res) => {
 });
 
 app.get("/maintanence", (req, res) => {
-    // res.send('<h1>About MY</h1>');
-    res.render("maintanence.hbs", {
-      pageTitle: "Maintanence Page",
-      underMaintanence: "Site is under Maintanence"
-    });
+  // res.send('<h1>About MY</h1>');
+  res.render("maintanence.hbs", {
+    pageTitle: "Maintanence Page",
+    underMaintanence: "Site is under Maintanence"
   });
+});
 
 app.get("/marina", (req, res) => {
   // res.send('<h1>About MY</h1>');
