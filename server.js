@@ -17,14 +17,14 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  let log = `$Site is under Maintanence \n`;
-  fs.appendFileSync("mar.json", log);
-    res.render("maintanence.hbs", {
-      pageTitle: "Maintanence Page",
-      underMaintanence: "Site is under Maintanence"
-    });
-  });
+// app.use((req, res, next) => {
+//   let log = `$Site is under Maintanence \n`;
+//   fs.appendFileSync("mar.json", log);
+//     res.render("maintanence.hbs", {
+//       pageTitle: "Maintanence Page",
+//       underMaintanence: "Site is under Maintanence"
+//     });
+//   });
 
 app.use(express.static(__dirname + "/public"));
 
